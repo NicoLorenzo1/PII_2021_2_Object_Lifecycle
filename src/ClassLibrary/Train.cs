@@ -1,18 +1,48 @@
-﻿//--------------------------------------------------------------------------------
-// <copyright file="Train.cs" company="Universidad Católica del Uruguay">
-//     Copyright (c) Programación II. Derechos reservados.
-// </copyright>
-//--------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 
 namespace ClassLibrary
 {
-    /// <summary>
-    /// Esta clase representa un tren muy básico.
-    /// </summary>
     public class Train
     {
+        /// <summary>
+        /// Variable de instancia con la que se van a identificar los trenes.
+        /// </summary>
+        /// <value></value>
+        private string train { get; set; }
+
+        //Constructor de la clase Train
+        public Train(string train)
+        {
+            this.train = train;
+            count++;
+        }
+
+        private static int count = 0;
+
+        /// <summary>
+        /// Metodo get y set para obtener o modificarla variable count
+        /// </summary>
+        /// <value></value>
+        public static int Counter
+        {
+            get
+            {
+                return count;
+            }
+
+            set
+            {
+                count = value;
+            }
+        }
+
+        //Destructor de objeto 
+        ~Train()
+        {
+            count--;
+        }
+
+
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
